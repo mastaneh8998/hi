@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>صفحه اتاق ها</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rooms-persian.css') }}">
+    <link rel='icon' href="{{ url_for('static', filename='images/site/icon.png') }}">
+</head>
+
+<body >
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner   ">
+            <div class="carousel-item active ">
+                <img src="{{ url_for('static', filename='images/hotel.jpg') }}" class="d-block w-100 " alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/hotel1.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/hotel2.png') }}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <div class="container mt-5">
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-xxl-9">
+                <div class="row row-cols-1 row-cols-md-2 g-4" id="cardContainer">
+                    <div class="col" data-code="1101">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/1.jpg') }}" class="cart-img-top rounded-top-4"
+                                alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div  class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center"> {{room1_code}} اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div  class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room1_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room1_capacity}} </p>
+                                        </div>
+
+                                        
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+                                        
+                                        <div class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+                                            {% if room1_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light  disabled" id="link_1" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_1" href="/book_1101">رزرو</a>
+                                            {% endif %}
+
+                                        </div>
+
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room1_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                  
+                    <div class="col" data-code="1102">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/2.jpg') }}" class="cart-img-top rounded-top-4"
+                                alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center"> {{room2_code}} اتاق    </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div  class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room2_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room2_capacity}} </p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+                                        
+                                        <div class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+
+                                            {% if room2_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_2" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_2" href="/book_1102">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room2_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col " data-code="1103">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/3.jpg') }}" class="cart-img-top rounded-top-4"
+                                alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+                                        <div
+                                            class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+
+                                            <h5 class="card-title title text-center">{{room3_code}} اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room3_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room3_capacity}} </p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+
+                                            {% if room3_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_3" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_3" href="/book_1103">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room3_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col" data-code="1104">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/4.jpg') }}" class="cart-img-top rounded-top-4"
+                                alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center">{{room4_code}} اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div  class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room4_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room4_capacity}} </p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+                                            {% if room4_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_4" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_4" href="/book_1104">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room4_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col" data-code="1105">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/5.jpg') }}" class="cart-img-top rounded-top-4"
+                                alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div  class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+
+                                        <div   class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center">{{room5_code}}   اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div  class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room5_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room5_capacity}} </p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+
+                                            {% if room5_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_5" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_5" href="/book_1105">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room5_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col" data-code="1106">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/download.jpg') }}" class="cart-img-top rounded-top-4"
+                                alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div  class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center">{{room6_code}} اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room6_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room6_capacity}} </p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div  class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+                                            {% if room6_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_6" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_6" href="/book_1106">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room6_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col" data-code="1107">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/photo14.jpg') }}" class="cart-img-top rounded-top-4" alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div  class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+                                        <div  class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center">{{room7_code}} اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div  class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room7_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room7_capacity}} </p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+                                            {% if room7_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_7" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_7" href="/book_1107">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room7_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col" data-code="1108">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/photo11.jpg') }}" class="cart-img-top rounded-top-4" alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div  class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+                                        <div  class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center">{{room8_code}} اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div  class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room8_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room8_capacity}} </p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+                                            {% if room8_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_8" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_8" href="/book_1108">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room8_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col" data-code="1109">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/photo13.jpg') }}" class="cart-img-top rounded-top-4" alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div  class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center">{{room9_code}} اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div
+                                            class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room9_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room9_capacity}} </p>
+                                        </div>
+
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+                                            {% if room9_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_9" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_9" href="/book_1109">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room9_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col" data-code="1110">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/photo12.jpg') }}" class="cart-img-top rounded-top-4" alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div  class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+
+                                        <div  class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center">{{room10_code}} اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div  class="mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room10_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room10_capacity}} </p>
+                                        </div>
+                                        
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div  class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+                                            {% if room10_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_10" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_10" href="/book_1110">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room10_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col" data-code="1111">
+
+                        <div class="card rounded-4">
+                            <img src="{{ url_for('static', filename='images/img1.jpg') }}" class="cart-img-top rounded-top-4" alt="My Image">
+                            <div class="card-body">
+
+                                <div class="container">
+                                    <div  class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center">{{room11_code}}  اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+                                        <div   class=" mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room11_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room11_capacity}} </p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        
+
+                                        <div  class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+                                            {% if room11_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_11" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_11" href="/book_1111">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room11_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col   mb-lg-2 mb-xl-0" data-code="1112">
+                        <div class="card rounded-4 mb-lg-4 mb-md-4 mb-sm-4 mb-4 ">
+                            <img src="{{ url_for('static', filename='images/img2.jpg') }}" class="cart-img-top rounded-top-4" alt="My Image">
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row row-cols-md-2 row-cols-lg-2 row-cols-xl-2 row-cols-xxl-2 row-cols-sm-1">
+                                        <div  class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+                                            <h5 class="card-title title text-center">{{room12_code}}  اتاق </h5>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+
+                                        <div class=" mb-3 col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12 d-flex justify-content-center text-center">
+
+                                            <p class="card-text text1 h6 text-end ">
+                                                مشخصات :
+                                            </p>
+                                        </div>
+                                        
+
+
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-lg-2 col-xl-6 col-xxl-6 text-lg-start text-md-center">
+                                            <p class="card-text text4 text-lg-start text-md-center text-sm-center ">تعداد تخت خواب : {{room12_beds}}</p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-12  mt-lg-2 col-lg-6 col-xl-6 col-xxl-6 text-lg-end text-md-center">
+                                            <p class="card-text text4 text-lg-end text-md-center text-sm-center">ظرفیت : {{room12_capacity}} </p>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 col-xl-12 col-xxl-12">
+                                            <hr class="bg-primary">
+                                        </div>
+                                        
+
+                                        <div  class="col-12 col-sm-12  col-md-12 col-lg-6 mb-md-3 mb-lg-0 mb-xl-0 mb-xxl-0 mb-3 mb-sm-3  d-flex justify-content-md-center justify-content-center justify-content-sm-center align-content-lg-start align-content-md-center align-content-sm-center justify-content-sm-start">
+                                            {% if room12_reservation == "1": %}
+                                            <a class="btn  w-75 text-center text-light disabled" id="link_12" href="#">رزرو</a>
+                                            {% else %}
+                                            <a class="btn  w-75 text-center text-light " id="link_12" href="/book_1112">رزرو</a>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-12   col-sm-12 col-md-12  mt-lg-2 col-lg-6 text-lg-end text-sm-center text-lg-centertext-md-center">
+                                            <p class="card-text text-center text-sm-center text-lg-end  text-md-center  text4 h6">{{room12_price}} تومان</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
+                <div class="row ">
+
+                    <div class="card w-100 col-12 col-sm-12 col-lg-12 col-md-12 d-flex mb-md-4 mb-sm-4 ">
+                        <h5 class="card-header text12">search</h5>
+                        <div class="card-body  w-100">
+                            <div class="input-group">
+                                <input style="color: rgb(118, 115, 208);" id="searchInput" type="search"  class="form-control rounded" placeholder="Search" aria-label="Search"  aria-describedby="search-addon">
+                                    <button onclick="search()" type="button" style="background-color: rgb(118, 115, 208);;" class="btn btn1  text-light">Go!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <script>
+            function search() {
+                const searchInput = document.getElementById('searchInput');
+                const cardContainer = document.getElementById('cardContainer');
+                const cards = cardContainer.getElementsByClassName('col');
+                console.log(searchInput.value)
+                const searchText = searchInput.value.toLowerCase();
+                for (let i = 0; i < cards.length; i++) {
+                    const card = cards[i];
+                    const cardCode = card.getAttribute('data-code').toLowerCase();
+                    const cardMatches = cardCode.includes(searchText);
+                    if (cardMatches) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            };
+        </script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

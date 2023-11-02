@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>welcome</title>
+  <link rel='icon' href="{{ url_for('static', filename='images/site/icon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body class="d-flex bg-primary-subtle justify-content-center align-content-center">
+
+  <div class="container bg-light mt-5 rounded-3 mb-5 align-items-center d-block text-center justify-content-center">
+    <img class="img mt-4 rounded-3" src="{{ url_for('static', filename='images/im1.jpg') }}" alt="">
+
+    <h1 class="text-primary m-3">لطفا زبان مورد نظر خود را انتخاب کنید </h1>
+    <h2 class="typing-effect text-primary text-center "> Please select your desired language</h2>
+    <button class="btn btn-primary  mt-5 mb-5"><a class="text-light link-offset-2 link-underline link-underline-opacity-0 "
+        href="/otherpage-en">English</a></button>
+    <button class="btn btn-primary  mt-5 mb-5"><a class="text-light link-offset-2 link-underline link-underline-opacity-0 "
+        href="/otherpage-pr">فارسی</a></button>
+
+  </div>
+  
+  <script>
+    window.onload = function () {
+      var audio = new Audio('{{ url_for("static", filename="m1.mp3") }}');
+      audio.play();
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

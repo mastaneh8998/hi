@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>صفحه مشخصات</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/book.css') }}">
+    <link rel='icon' href="{{ url_for('static', filename='images/site/icon.png') }}">
+    <link rel="stylesheet" href="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.css">
+    <!-- //// -->
+    <script>
+       
+    </script>
+</head>
+
+<body class="body">
+    <div class="container mb-5 bg-light text-center mt-4 justify-content-center align-items-center rounded-3">
+        <h1 class="text1 pt-2 mt-5">رزرو</h1>
+        <form action="/next" method="POST" class="row g-3">
+            <div class="col-md-6">
+                <label for="name1" class="text1 form-label">نام و نام خانوادگی</label>
+                <input type="text" class="text1 form-control" name="input_name" id="input_name"   autopostback="">
+            </div>
+            <div class="col-md-6">
+                <label for="name_en" class="text1 form-label">نام و نام خانوادگی به لاتین </label>
+                <input type="text" class="text2 form-control" name="name" id="name">
+            </div>
+            <div class="col-md-6">
+                <label for="National_Code" class="text1 form-label">کد ملی</label>
+                <input type="number" class="text2 form-control" name="national_code" id="national_code">
+            </div>
+
+            <div class="col-md-6">
+                <label for="National_Code" class="text1 form-label">تاریخ تولد </label>
+                <input class="text2 form-control" name="date_of_birth" type="text" id="date_of_birth" data-jdp="" placeholder="لطفا یک تاریخ وارد نمایید" data-jdp-only-date="">
+            </div>
+            <div class="col-md-12">
+                <label for="National_Code" class="text1 form-label">کشور </label>
+                <input class="text1 form-control" name="country" type="text" id="country" >
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="text1 form-label">ادرس</label>
+                <input type="text" class="text1 form-control" id="inputaddress" name="inputaddress" placeholder="تهران خیابان ولیعصر ...">
+            </div>
+            <div class="col-12">
+                <label for="inputPhonNumber" class="text1 form-label">شماره تماس</label>
+                <input type="number" class="form-control" name="inputphonenumber" id="inputphonenumber">
+            </div>
+            <div class="col-md-6">
+                <label for="input" class="text1 form-label">تعداد روز رزرو</label>
+                <input type="number" class="form-control" name="multiplier" id="multiplier" oninput="multiply()">
+            </div>
+            <div class="col-md-6">
+                <label for="inputState" class="text1 form-label">جنسیت</label>
+                <select id="inputState" type="text"  class="text1 form-select">
+                    <option class="text1" selected>انتخاب کنید </option>
+                    <option class="text1">مرد</option>
+                    <option class="text1">زن</option>
+                </select>
+            </div>
+
+            <div class="col-12 col-lg-6  col-sm-12 col-md-12 col-xl-6 col-xxl-6">
+                <div class="form-check d-flex text-lg-end justify-content-center text-md-center text-sm-center justify-content-lg-end justify-content-md-center  justify-content-sm-center">
+
+                    <h4 class="text2">{{book_price}}</h4>
+                    <h4 class="text1 text-end">قیمت هر روز رزرو اتاق : </h4>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6  col-sm-12 col-md-12 col-xl-6 col-xxl-6">
+                <div class="form-check d-flex text-lg-end justify-content-center text-md-center text-sm-center justify-content-lg-end justify-content-md-center  justify-content-sm-center">
+
+                    <h4 class="text1 " id="result"></h4>
+                    <h4 class="text1"> هزینه کل : </h4>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <button type="submit "  class="btn btn1 "><a onclick="checkTextbox()" class="text-light link-offset-2 link-underline link-underline-opacity-0">پرداخت</a></button>
+            </div>
+        </form>
+
+    </div>
+    <script>
+        
+    </script>
+    <script>
+        var number = {{book_price}};
+        var multiplierInput = document.getElementById("multiplier");
+        var resultDisplay = document.getElementById("result");
+
+        function multiply() {
+            var multiplier = parseFloat(multiplierInput.value);
+            var result = number * multiplier;
+            resultDisplay.textContent = result;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
+    <script>
+        jalaliDatepicker.startWatch();
+    </script>
+</body>
+
+</html>

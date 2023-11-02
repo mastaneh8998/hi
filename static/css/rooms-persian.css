@@ -1,0 +1,42 @@
+.card-text.text1{
+    color:rgb(123, 123, 203);
+    direction: rtl;
+}
+.card-text.text2{
+    color: rgb(77, 104, 180);
+    font-size: small;
+} 
+.card-text.text3{
+    color: rgb(118, 115, 208);
+    direction: rtl;
+}
+.card-text.text4{
+    color: rgb(93, 111, 193);
+    direction: rtl;
+}
+.card-text.text5{
+    color: rgb(75, 114, 152);
+    direction: rtl;
+}
+.card-title.title{
+    color: rgb(118, 115, 208);
+    
+}
+.card-text.h6.text6{
+    color: rgb(77, 104, 180);
+}
+.btn.w-75.text-center{
+    background-color: rgb(109, 121, 171);
+}
+.d-block.m-1{
+    width: 97%;
+}
+.form-control.rounded{
+    color: rgb(118, 115, 208); 
+}
+.btn.w-75.text-center.text-light{
+    background-color:  rgb(118, 115, 208);
+}
+.card-header.text12{
+    color: rgb(118, 115, 208);
+}
